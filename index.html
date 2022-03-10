@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <nav class="side-nav">
+      <div class="side-nav__section">
+        <h3>フォント名</h3>
+        <input type="text" id="font-name" class="side-nav__input" />
+        <h3>表示数</h3>
+        <input
+          type="number"
+          id="max-count"
+          value="40"
+          class="side-nav__input"
+        />
+        <label class="side-nav__label"
+          ><input
+            type="checkbox"
+            id="only-japanese"
+            checked
+          />日本語フォントのみ</label
+        >
+        <button onclick="loadFont()" class="side-nav__load-font">
+          フォントを読み込む
+        </button>
+      </div>
+      <div class="side-nav__section">
+        <h2>サンプルテキスト</h2>
+        <textarea rows="6" id="all-sample" class="side-nav__textarea">
+愛のあるユニークで豊かな書体.
+Unique and rich typefaces with love.</textarea
+        >
+      </div>
+    </nav>
+    <main>
+      <ul id="font-list"></ul>
+    </main>
+  </body>
+</html>
