@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Font List on Web</title>
     <link href="style.css" rel="stylesheet" />
     <script src="index.js"></script>
   </head>
@@ -30,12 +31,23 @@
         </button>
       </div>
       <div class="side-nav__section">
-        <h2>サンプルテキスト</h2>
+        <h3>サンプルテキスト</h3>
         <textarea rows="6" id="all-sample" class="side-nav__textarea">
 愛のあるユニークで豊かな書体.
 Unique and rich typefaces with love.</textarea
         >
       </div>
+    </div>
+    <div class="side-nav__section">
+      <p class="side-nav__help">
+        Chrome 87 以降にて <a href="chrome://flags">chrome://flags</a> より Font
+        Access APIs を有効にすることで作動します。詳細は
+        <a href="https://chromestatus.com/feature/6234451761692672"
+          >Local Font Access - Chrome Platform Status</a
+        >
+        より。
+      </p>
+    </div>
     </nav>
     <main>
       <ul id="font-list"></ul>

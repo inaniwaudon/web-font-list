@@ -16,7 +16,7 @@ nav {
 }
 
 .side-nav__section + .side-nav__section {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .side-nav__input,
@@ -46,15 +46,19 @@ nav {
   background: #333;
 }
 
+.side-nav__help {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.side-nav__help a {
+  color: #666;
+  margin: 0;
+}
+
 .side-nav h3 {
   font-weight: normal;
   font-size: 1em;
-  margin: 0 0 12px 0;
-}
-
-.side-nav h2 {
-  font-weight: normal;
-  font-size: 1.2em;
   margin: 0 0 12px 0;
 }
 
