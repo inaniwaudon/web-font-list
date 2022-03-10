@@ -43,7 +43,7 @@ const loadFont = async () => {
       (font) =>
         (fontNameInput.value.length === 0 ||
           font.fullName.indexOf(fontNameInput.value) > -1) &&
-        (onlyJapaneseInput.checked || japaneseRegex.test(font.fullName))
+        (!onlyJapaneseInput.checked || japaneseRegex.test(font.fullName))
     )
     .slice(0, maxCountInput.value)
     .forEach(async (font) => {
