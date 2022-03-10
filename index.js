@@ -60,7 +60,7 @@ const loadFont = async () => {
       const sample = document.createElement("textarea");
       sample.className = "font__sample";
       sample.style.fontFamily = font.postscriptName;
-      sample.innerHTML = allSampleTextarea.innerHTML;
+      sample.innerHTML = allSampleTextarea.value;
       li.appendChild(sample);
     });
 };
