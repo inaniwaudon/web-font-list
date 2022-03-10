@@ -43,26 +43,24 @@ const loadFont = async () => {
       (font) =>
         (fontNameInput.value.length === 0 ||
           font.fullName.indexOf(fontNameInput.value) > -1) &&
-        japaneseRegex.test(font.fullName)
+        (onlyJapaneseInput.checked || japaneseRegex.test(font.fullName))
     )
     .slice(0, maxCountInput.value)
     .forEach(async (font) => {
-      if (onlyJapaneseInput.checked || japaneseRegex.test(font.fullName)) {
-        const sfnt = await font.blob();
-        const version = await sfnt.slice(0, 4).text();
+      const sfnt = await font.blob();
+      const version = await sfnt.slice(0, 4).text();
 
-        const li = document.createElement("li");
-        li.className = "font";
-        li.innerHTML = `<h2>${font.fullName}</h2><p class="detail">PSName: ${
-          font.postscriptName
-        }<br/>${getFontType(version)}</p>`;
-        fontListUl.appendChild(li);
+      const li = document.createElement("li");
+      li.className = "font";
+      li.innerHTML = `<h2>${font.fullName}</h2><p class="detail">PSName: ${
+        font.postscriptName
+      }<br/>${getFontType(version)}</p>`;
+      fontListUl.appendChild(li);
 
-        const sample = document.createElement("textarea");
-        sample.className = "font__sample";
-        sample.style.fontFamily = font.postscriptName;
-        sample.innerHTML = allSampleTextarea.innerHTML;
-        li.appendChild(sample);
-      }
+      const sample = document.createElement("textarea");
+      sample.className = "font__sample";
+      sample.style.fontFamily = font.postscriptName;
+      sample.innerHTML = allSampleTextarea.innerHTML;
+      li.appendChild(sample);
     });
 };
