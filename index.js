@@ -3,7 +3,8 @@ let fontNameInput,
   maxCountInput,
   onlyJapaneseInput,
   fontListUl,
-  allSampleTextarea;
+  allSampleTextarea,
+  initializeDiv;
 
 window.onload = () => {
   fontNameInput = document.querySelector("#font-name");
@@ -11,8 +12,7 @@ window.onload = () => {
   onlyJapaneseInput = document.querySelector("#only-japanese");
   fontListUl = document.querySelector("#font-list");
   allSampleTextarea = document.querySelector("#all-sample");
-
-  loadFont();
+  initializeDiv = document.querySelector("#initialize");
 };
 
 const getFontType = (version) => {
@@ -30,10 +30,12 @@ const loadFont = async () => {
   try {
     // Query for allowed local fonts.
     fonts = await navigator.fonts.query();
-  } catch {
-    console.warn(`Local font access not available.`);
+  } catch (e) {
+    alert("ローカルのフォント読み込みを利用できませんでした。\n" + e);
+    return;
   }
 
+  initializeDiv.style.display = "none";
   fontListUl.innerHTML = "";
 
   fonts

@@ -106,3 +106,9 @@ main {
   border: none;
   border-radius: 4px;
 }
+
+#initialize {
+  color: #ccc;
+  font-size: 8rem;
+  padding-top: 118px;
+}
