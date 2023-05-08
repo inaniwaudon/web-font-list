@@ -29,7 +29,7 @@ const loadFont = async () => {
   let fonts;
   try {
     // Query for allowed local fonts.
-    fonts = await navigator.fonts.query();
+    fonts = await self.queryLocalFonts();
   } catch (e) {
     alert("ローカルのフォント読み込みを利用できませんでした。\n" + e);
     return;
