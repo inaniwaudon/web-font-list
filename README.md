@@ -1,9 +1,4 @@
-# inaniwaudon/web-fontlist - Font List on the Web
+# web-fontlist
+[Local Font Access API](https://wicg.github.io/local-font-access/) を利用してローカルのフォントを表示します。実験的な機能を利用しています。
+
 https://inaniwaudon.github.io/web-font-list/
-
-Chrome 87 以降にて <a href="chrome://flags">chrome://flags</a> より Font Access APIs を有効にすることで作動します。
-
-## 参考文献
-
-- [Local Font Access API - Draft Community Group Report](https://wicg.github.io/local-font-access/)
-- [Local Font Access - Chrome Platform Status](https://chromestatus.com/feature/6234451761692672)
